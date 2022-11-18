@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello MessageSendController!{% endblock %}
+
+{% block body %}
+{% for message in messageSend %}
+
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">E-mail</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">{{ message.UserEmail }}</textarea>
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Titre</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">{{ message.title }}</textarea>
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">{{ message.MessageSend }}</textarea>
+    </div>
+   
+        
+   {% endfor %}
+
+
+{% endblock %}

@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{{ path('app_main') }}">Forum Symfony</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{{ path('app_main') }}">Accueil</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="connection">
+      {% if app.user %}
+        <a class="btn btn-danger me-3" href="{{ path('app_logout') }}">Déconnexion</a>
+        <a href="{{ path('app_message') }}"><button type="button" class="btn btn-success">Envoyer un message</button></a>
+        {% else %}
+          <a href="{{ path('app_login') }}"><button type="button" class="btn btn-success me-3">Connexion</button></a>
+          <a href="{{ path('app_register') }}"><button type="button" class="btn btn-success">Inscription</button></a>
+          
+      {% endif %}
+      </form>
+    </div>
+  </div>
+</nav>

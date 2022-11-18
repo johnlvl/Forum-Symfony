@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+{% if app.user %}
+    <div class="mb-3">
+        Vous êtes connecter en tant que {{ app.user.FirstName }} {{ app.user.LastName }}
+    </div>
+    <a class="btn btn-primary mt-3" href="{{ path('app_message_send') }}">Voir les questions</a>
+    {% else %}
+
+    <div class="mx-auto" style="width: 800px;">
+        <h1>Bienvenue</h1>
+        <h1>Connecter vous pour envoyer une question</h1>
+    </div>
+
+{% endif %}
+
+
+{% endblock %}
